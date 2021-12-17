@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick=" document.getElementById('mySidebar').style.display = 'none'" class="w3-bar-item w3-large"><strong >Close</strong> &times;</button>
+  <a routerLink="/" class="w3-bar-item w3-button"> <strong>Home</strong></a>
+
+  <a routerLink="/formation" class="w3-bar-item w3-button"><strong>Ajouter formation</strong></a>
+  <a routerLink="/enseignant" class="w3-bar-item w3-button"><strong>Mon profil</strong></a>
+  <a routerLink="/messages" class="w3-bar-item w3-button"><strong>Mes Messages</strong></a>
+</div>
+
+<!-- Page Content -->
+<div class="w3-teal">
+  <button class="w3-button w3-teal w3-xlarge" onclick=" document.getElementById('mySidebar').style.display = 'block'" ><img src="assets/menu.png" class="img"></button>
+
+</div>
+<div id="main-container">
+    <table class="table  table-hover table-striped">
+      <thead class="thead">
+        <th><strong>email</strong></th>
+        <th><strong>Telephone</strong></th>
+        <th><strong>Role</strong></th>
+        <th><strong>Password</strong></th>
+        <th><strong>LastName</strong></th>
+        <th><strong>FirstName</strong></th>
+        <th><strong>Gender</strong></th>
+        <th><strong>Adress</strong></th>
+        <th><strong>Statut</strong></th>
+        <th></th>
+      </thead>
+      <tr>
+        <td>{{ authService?.loggedUser }}</td>
+       
+        <td>{{ authService?.telephone }}</td>
+        <td>{{ authService?.role }}</td>
+        <td>{{ authService?.password}}</td>
+        <td>{{ authService?.lastName}}</td>
+        <td>{{ authService?.firstName}}</td>
+        <td>{{ authService?.gender}}</td>
+        <td>{{ authService?.adress}}</td>
+        <td>Active</td>
+        <td><a class="btn btn-primary tooltips" id="edit"(click)="onOpenModal(authService.user, 'edit')"  data-placement="top" data-original-title="Edit">Edit </a></td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.css">
+  </body>
+  </html>
